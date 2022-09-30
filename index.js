@@ -1,6 +1,20 @@
+let charizardImg = new Image(300, 300);
+charizardImg.src = 'assets/images/Charizard-removebg-preview.png'
+let raichuImg = new Image(300, 300);
+raichuImg.src = 'assets/images/raichu-removebg-preview.png'
+let blastoiseImg = new Image(300, 300);
+blastoiseImg.src = 'assets/images/pokemon-blastoise-nicknames-removebg-preview-removebg-preview.png'
+let charmeleonImg = new Image(250, 250);
+charmeleonImg.src = 'assets/images/Charmeleon.png'
+let pikachuImg = new Image(250, 250);
+pikachuImg.src = 'assets/images/pikachu-removebg-preview.png'
+let wartortleImg = new Image(250, 250);
+wartortleImg.src = 'assets/images/wartortle-removebg-preview.png'
+
 let pokemoni = [
 
   {
+      img: charizardImg,
       name: 'Charizard',
       type: 'Fire',
       skills: ['Fire breath', 'Tail swipe', 'Block'],
@@ -13,6 +27,7 @@ let pokemoni = [
   },
 
   {
+      img: raichuImg,
       name: 'Raichu',
       type: 'Electric',
       skills: ['Thunder spear', 'zig-zag jump', 'Dodge'],
@@ -24,6 +39,7 @@ let pokemoni = [
   },
 
   {
+      img: blastoiseImg,
       name: 'Blastoise',
       type: 'Water',
       skills: ['Water cannon', 'spinning shell', 'Block'],
@@ -34,7 +50,8 @@ let pokemoni = [
       }
   },
 
-  {
+  { 
+      img: charmeleonImg,
       name: 'Charmeleon',
       type: 'Fire',
       skills: ['Fire ball', 'dodge'],
@@ -46,6 +63,7 @@ let pokemoni = [
   },
 
   {
+      img: pikachuImg,
       name: 'Pikachu',
       type: 'Electric',
       skills: ['Small zap', 'dodge'],
@@ -57,6 +75,7 @@ let pokemoni = [
   },
 
   {
+      img: wartortleImg,
       name: 'Wartortle',
       type: 'Water',
       skills: ['Water breath', 'block'],
@@ -131,14 +150,23 @@ buttonPokretac.addEventListener('click',(event) =>{
           button1.append(divPar,buttonIzaberi)
          
           divPrvi.append(divPok)
-         
+          
+
+          buttonIzaberi.addEventListener('click', ()=>{
+
+
+            let pokemonImgDiv = document.createElement('div');
+            pokemonImgDiv.className = 'pokemon-img-div';
+            let choosenPokemon = document.createElement('img');
+            choosenPokemon.setAttribute('src', pokemon.img);
+            choosenPokemon.setAttribute('alt', pokemon.name);
+
+            pokemonImgDiv.appendChild(choosenPokemon)
+            buttonIzaberi.append(pokemonImgDiv);
+            
+          }); 
       })
-      
-              
-
   })
- 
-
 })
 
 
