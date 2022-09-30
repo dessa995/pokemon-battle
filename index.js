@@ -1,15 +1,27 @@
 let charizardImg = new Image(300, 300);
 charizardImg.src = 'assets/images/Charizard-removebg-preview.png'
+charizardImg.width = 300;
+charizardImg.height = 300;
 let raichuImg = new Image(300, 300);
 raichuImg.src = 'assets/images/raichu-removebg-preview.png'
+raichuImg.width = 300;
+raichuImg.height = 300;
 let blastoiseImg = new Image(300, 300);
 blastoiseImg.src = 'assets/images/pokemon-blastoise-nicknames-removebg-preview-removebg-preview.png'
-let charmeleonImg = new Image(250, 250);
+blastoiseImg.width = 300;
+blastoiseImg.height = 300;
+let charmeleonImg = new Image(20, 20);
 charmeleonImg.src = 'assets/images/Charmeleon.png'
+charmeleonImg.width = 20;
+charmeleonImg.height = 20;
 let pikachuImg = new Image(250, 250);
 pikachuImg.src = 'assets/images/pikachu-removebg-preview.png'
+pikachuImg.width = 250;
+pikachuImg.height = 250;
 let wartortleImg = new Image(250, 250);
 wartortleImg.src = 'assets/images/wartortle-removebg-preview.png'
+wartortleImg.width = 250;
+wartortleImg.height = 250;
 
 let pokemoni = [
 
@@ -23,7 +35,8 @@ let pokemoni = [
           deffence: 6,
           speed: 5,
 
-      }
+      },
+      choosen: false,
   },
 
   {
@@ -35,7 +48,8 @@ let pokemoni = [
           Attack: 6,
           deffence: 6,
           speed: 8
-      }
+      },
+      choosen: false,
   },
 
   {
@@ -47,7 +61,8 @@ let pokemoni = [
           Attack: 6,
           deffence: 10,
           speed: 4,
-      }
+      },
+      choosen: false,
   },
 
   { 
@@ -59,7 +74,8 @@ let pokemoni = [
           Attack: 4,
           deffence: 4,
           speed: 6,
-      }
+      },
+      choosen: false,
   },
 
   {
@@ -71,7 +87,8 @@ let pokemoni = [
           Attack: 4,
           deffence: 3,
           speed: 10,
-      }
+      },
+      choosen: false,
   },
 
   {
@@ -83,7 +100,8 @@ let pokemoni = [
           Attack: 3,
           deffence: 6,
           speed: 5,
-      }
+      },
+      choosen: false,
   }
 ]
 
@@ -98,11 +116,11 @@ buttonPokretac.textContent = 'Izaberi svog pokemona'
 
 divPokemoni.append(buttonPokretac)
 
-const resetDugme = document.createElement('button')
-resetDugme.className = 'reset-dugme'
-resetDugme.textContent = 'RESET'
+const fightButton = document.createElement('button')
+fightButton.className = 'fight-dugme'
+fightButton.textContent = 'FIGHT!'
 
-divPokemoni.append(resetDugme)
+divPokemoni.append(fightButton)
 
 buttonPokretac.addEventListener('click',(event) =>{
  
@@ -144,7 +162,7 @@ buttonPokretac.addEventListener('click',(event) =>{
           speed: ${pokemon.stats.speed}`
          
           let buttonIzaberi = document.createElement('button')
-          buttonIzaberi.textContent = 'Izaberi me!'
+          buttonIzaberi.textContent = 'Choose me!'
           buttonIzaberi.className = 'izaberi-button'
 
           button1.append(divPar,buttonIzaberi)
@@ -158,13 +176,22 @@ buttonPokretac.addEventListener('click',(event) =>{
             let pokemonImgDiv = document.createElement('div');
             pokemonImgDiv.className = 'pokemon-img-div';
             let choosenPokemon = document.createElement('img');
-            choosenPokemon.setAttribute('src', pokemon.img);
+            choosenPokemon.setAttribute('src', pokemon.img.src);
             choosenPokemon.setAttribute('alt', pokemon.name);
+            choosenPokemon.className = 'pokemon-img'
 
             pokemonImgDiv.appendChild(choosenPokemon)
-            buttonIzaberi.append(pokemonImgDiv);
-            
+            divPokemoni.append(pokemonImgDiv);            
           }); 
+
+          buttonIzaberi.addEventListener('click', ()=>{
+            divPrvi.remove();
+          });
+
+          buttonIzaberi.addEventListener('click', ()=>{
+            pokemon.choosen = true;
+          });
+          
       })
   })
 })
@@ -173,6 +200,8 @@ buttonPokretac.addEventListener('click',(event) =>{
 buttonPokretac.addEventListener('click',()=>{
   buttonPokretac.remove()
 })
+
+
 
 
 
@@ -215,15 +244,31 @@ buttonProtivnik.addEventListener('click',()=>{
           divPar2.textContent = `Name: ${pokemon.name}. Type: ${pokemon.type}. Skills: ${pokemon.skills}. stats - Attack: ${pokemon.stats.Attack}, deffence: ${pokemon.stats.deffence}, speed: ${pokemon.stats.speed}`
 
           let buttonIzaberi = document.createElement('button')
-          buttonIzaberi.textContent = 'Izaberi me!'
+          buttonIzaberi.textContent = 'Choose me!'
           buttonIzaberi.className = 'izaberi-button'
 
-          buttonIzaberi.addEventListener('click',()=>{
-              
-              let izabranik2 = document.createElement('p')
-              izabranik2.textContent = `Izabrali ste za protivnika: ${pokemon.ime}`
-              buttonIzaberi.append(izabranik2)
-          })
+          buttonIzaberi.addEventListener('click', ()=>{
+
+
+            let pokemonImgDiv = document.createElement('div');
+            pokemonImgDiv.className = 'opponent-img-div';
+            let choosenPokemon = document.createElement('img');
+            choosenPokemon.setAttribute('src', pokemon.img.src);
+            choosenPokemon.setAttribute('alt', pokemon.name);
+            choosenPokemon.className = 'pokemon-img'
+
+            pokemonImgDiv.appendChild(choosenPokemon)
+            divPokemoni2.append(pokemonImgDiv);            
+          }); 
+
+          buttonIzaberi.addEventListener('click', ()=>{
+            divDrugi.remove();
+          });
+
+          buttonIzaberi.addEventListener('click', ()=>{
+            pokemon.choosen = true;
+          });
+          
 
 
           button2.append(divPar2, buttonIzaberi)

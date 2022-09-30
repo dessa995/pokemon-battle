@@ -11,15 +11,15 @@ body {
   background-image: url("/assets/images/istockphoto-137801222-1024x1024-transformed.jpeg");
   background-color: #28544b;
   background-repeat: no-repeat;
-  background-size: 100%; 
+  background-size: cover; 
   position: relative;
   
   
 }
 
-.reset-dugme {
+.fight-dugme {
   position: absolute;
-  top: 85%;
+  top: 90%;
   right: 45%;
   width: 150px;
   padding: 10px;
@@ -27,8 +27,11 @@ body {
   border-radius: 5px;
   background-color: black;
   color: white;
-  
+}
 
+.fight-dugme:hover {
+  background-color: rgb(19, 19, 19);
+  cursor: pointer;
 }
 
 div.naslov {
@@ -44,7 +47,8 @@ div.naslov {
 
 .poke-container {
   display: flex;
-  width: 800px;
+  max-width: 1000px;
+  gap: 150px;
   margin-right: auto;
   margin-left: auto;
   justify-content: space-between;
@@ -135,6 +139,15 @@ padding: 10px;
 .izaberi-button:hover {
   cursor: pointer;
   background-color: rgb(24, 24, 24);
+}
+
+.pokemon-img-div {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.pokemon-img {
+  max-width: 400px;
 }
 
 
