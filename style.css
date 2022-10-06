@@ -7,20 +7,18 @@ body {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
   background-image: url("/assets/images/istockphoto-137801222-1024x1024-transformed.jpeg");
   background-color: #28544b;
   background-repeat: no-repeat;
-  background-size: cover; 
+  background-size: cover;
   position: relative;
-  
-  
 }
 
 .fight-dugme {
   position: absolute;
   top: 90%;
-  right: 45%;
+  left: 45%;
   width: 150px;
   padding: 10px;
   height: auto;
@@ -36,16 +34,16 @@ body {
 
 div.naslov {
   position: absolute;
-  top: 3%
-  
+  top: 3%;
 }
 
 .naslov1 {
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 3em;
 }
 
 .poke-container {
+  /* position: relative; */
   display: flex;
   max-width: 1000px;
   gap: 150px;
@@ -54,30 +52,11 @@ div.naslov {
   justify-content: space-between;
 }
 
-
 .pokretac {
-  
   max-width: 200px;
   max-height: 200px;
   padding: 80px 0px;
-  background-image: url('assets/images/Poké_Ball_icon.svg-removebg-preview.png');
-  background-size: cover;
-  background-repeat: none;
-  background-color: transparent;
-  border: none;
-  color: rgb(30, 217, 16);
-  font-size: 20px;
-  font-weight: bold;
-  text-transform: uppercase;  
-}
-
-
-.button-protivnik {
-  
-  max-width: 200px;
-  max-height: 200px;
-  padding: 80px 10px;
-  background-image: url('assets/images/Poké_Ball_icon.svg-removebg-preview.png');
+  background-image: url("assets/images/Poké_Ball_icon.svg-removebg-preview.png");
   background-size: cover;
   background-repeat: none;
   background-color: transparent;
@@ -88,27 +67,40 @@ div.naslov {
   text-transform: uppercase;
 }
 
-.pokretac:hover, .button-protivnik:hover {
+.button-protivnik {
+  max-width: 200px;
+  max-height: 200px;
+  padding: 80px 10px;
+  background-image: url("assets/images/Poké_Ball_icon.svg-removebg-preview.png");
+  background-size: cover;
+  background-repeat: none;
+  background-color: transparent;
+  border: none;
+  color: rgb(30, 217, 16);
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.pokretac:hover,
+.button-protivnik:hover {
   color: rgb(27, 153, 18);
   cursor: pointer;
 }
 
-
 .prvi {
-display: block;
-padding: 10px;
+  display: block;
+  padding: 10px;
 }
 
-
-.drugi{
-display: block;
-padding: 10px;
+.drugi {
+  display: block;
+  padding: 10px;
 }
-
 
 .buttonPrvi {
   width: 370px;
-  background-color:  #facc2e;
+  background-color: #facc2e;
   color: black;
   border-style: solid 5px black;
   float: left;
@@ -121,14 +113,12 @@ padding: 10px;
   width: 370px;
   background-color: #f26d5b;
   color: white;
-  border-style: solid 5px black;   
-  float: right; 
+  border-style: solid 5px black;
+  float: right;
   padding: 10px;
   border-radius: 10px;
-  margin: 5px; 
+  margin: 5px;
 }
-
-
 
 .izaberi-button {
   border-radius: 4px;
@@ -150,7 +140,21 @@ padding: 10px;
   max-width: 400px;
 }
 
+.winner {
+  position: absolute;
+  display: flex;
+  max-width: 500px;
+  max-height: 50px;
+  background-color: #f26d5b;
+  /* border: 2px solid #facc2e; */
+  margin-top: 60vh;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
 
-
-
-
+.winner-text {
+  color: aliceblue;
+}
