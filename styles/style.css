@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   box-sizing: border-box;
 }
@@ -47,8 +48,8 @@ div.naslov {
   display: flex;
   max-width: 1000px;
   gap: 150px;
-  margin-right: auto;
   margin-left: auto;
+  margin-right: auto;
   justify-content: space-between;
 }
 
@@ -56,7 +57,7 @@ div.naslov {
   max-width: 200px;
   max-height: 200px;
   padding: 80px 0px;
-  background-image: url("assets/images/Poké_Ball_icon.svg-removebg-preview.png");
+  background-image: url("/assets/images/Poké_Ball_icon.svg-removebg-preview.png");
   background-size: cover;
   background-repeat: none;
   background-color: transparent;
@@ -71,7 +72,7 @@ div.naslov {
   max-width: 200px;
   max-height: 200px;
   padding: 80px 10px;
-  background-image: url("assets/images/Poké_Ball_icon.svg-removebg-preview.png");
+  background-image: url("/assets/images/Poké_Ball_icon.svg-removebg-preview.png");
   background-size: cover;
   background-repeat: none;
   background-color: transparent;
@@ -132,7 +133,6 @@ div.naslov {
 }
 
 .pokemon-img-div {
-  -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
 }
 
@@ -150,11 +150,11 @@ div.naslov {
   margin-top: 60vh;
   margin-left: auto;
   margin-right: auto;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   gap: 10px;
 }
 
 .winner-text {
   color: aliceblue;
-}
+}/*# sourceMappingURL=style.css.map */

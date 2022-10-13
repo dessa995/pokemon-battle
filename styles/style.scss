@@ -1,0 +1,157 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 30px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("/assets/images/istockphoto-137801222-1024x1024-transformed.jpeg");
+  background-color: #28544b;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.fight-dugme {
+  position: absolute;
+  top: 90%;
+  left: 45%;
+  width: 150px;
+  padding: 10px;
+  height: auto;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+}
+
+.fight-dugme:hover {
+  background-color: rgb(19, 19, 19);
+  cursor: pointer;
+}
+
+div.naslov {
+  position: absolute;
+  top: 3%;
+}
+
+.naslov1 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 3em;
+}
+
+.poke-container {
+  /* position: relative; */
+  display: flex;
+  max-width: 1000px;
+  gap: 150px;
+  @include divPosition();
+  justify-content: space-between;
+}
+
+.pokretac {
+  max-width: 200px;
+  max-height: 200px;
+  padding: 80px 0px;
+  background-image: url("/assets/images/Poké_Ball_icon.svg-removebg-preview.png");
+  background-size: cover;
+  background-repeat: none;
+  background-color: transparent;
+  border: none;
+  color: rgb(30, 217, 16);
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.button-protivnik {
+  max-width: 200px;
+  max-height: 200px;
+  padding: 80px 10px;
+  background-image: url("/assets/images/Poké_Ball_icon.svg-removebg-preview.png");
+  background-size: cover;
+  background-repeat: none;
+  background-color: transparent;
+  border: none;
+  color: rgb(30, 217, 16);
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.pokretac:hover,
+.button-protivnik:hover {
+  color: rgb(27, 153, 18);
+  cursor: pointer;
+}
+
+.prvi {
+  display: block;
+  padding: 10px;
+}
+
+.drugi {
+  display: block;
+  padding: 10px;
+}
+
+.buttonPrvi {
+  width: 370px;
+  background-color: #facc2e;
+  color: black;
+  border-style: solid 5px black;
+  float: left;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+.buttonDrugi {
+  width: 370px;
+  background-color: #f26d5b;
+  color: white;
+  border-style: solid 5px black;
+  float: right;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+.izaberi-button {
+  border-radius: 4px;
+  background-color: rgb(4, 4, 4);
+  color: white;
+}
+
+.izaberi-button:hover {
+  cursor: pointer;
+  background-color: rgb(24, 24, 24);
+}
+
+.pokemon-img-div {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.pokemon-img {
+  max-width: 400px;
+}
+
+.winner {
+  position: absolute;
+  display: flex;
+  max-width: 500px;
+  max-height: 50px;
+  background-color: #f26d5b;
+  /* border: 2px solid #facc2e; */
+  margin-top: 60vh;
+  @include divPosition();
+  @include centerContent();
+  gap: 10px;
+}
+
+.winner-text {
+  color: aliceblue;
+}

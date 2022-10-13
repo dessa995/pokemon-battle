@@ -250,10 +250,6 @@ buttonProtivnik.addEventListener("click", () => {
         divPokemoni2.append(pokemonImgDiv);
       });
 
-      // buttonIzaberi.addEventListener("click", () => {
-      //   divDrugi.remove();
-      // });
-
       buttonIzaberi.addEventListener("click", () => {
         pokemon.choosen = true;
         Object.assign(choosenOpponent, { pokemon });
