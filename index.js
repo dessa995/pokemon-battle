@@ -115,8 +115,11 @@ const divPokemoni = document.querySelector(".pokemoni");
 
 const buttonPokretac = document.createElement("button");
 buttonPokretac.className = "pokretac";
-buttonPokretac.textContent = "Izaberi svog pokemona";
+const buttonPokretacText = document.createElement("p");
+buttonPokretacText.textContent = "Izaberi svog pokemona";
+buttonPokretacText.className = "pokeball-text";
 
+buttonPokretac.append(buttonPokretacText);
 divPokemoni.append(buttonPokretac);
 
 const fightButton = document.createElement("button");
@@ -201,8 +204,11 @@ const divPokemoni2 = document.querySelector(".protivnik");
 
 const buttonProtivnik = document.createElement("button");
 buttonProtivnik.className = "button-protivnik";
-buttonProtivnik.textContent = "Izaberi svog pokemona";
+const buttonProtivnikText = document.createElement("p");
+buttonProtivnikText.textContent = "Izaberi svog pokemona";
+buttonProtivnikText.className = "pokeball-text";
 
+buttonProtivnik.append(buttonProtivnikText);
 divPokemoni2.append(buttonProtivnik);
 
 buttonProtivnik.addEventListener("click", () => {
@@ -347,6 +353,8 @@ fightButton.addEventListener("click", () => {
         winnerDiv.append(winner);
 
         fightButton.remove();
+        $(divPokemoni2).toggle("explode", { pieces: 75 }, 1500);
+        document.remove(divDrugi);
 
         return console.log("Omg! The left Player has won!");
       } else if (
@@ -365,6 +373,8 @@ fightButton.addEventListener("click", () => {
         winnerDiv.append(winner);
 
         fightButton.remove();
+        $(divPokemoni).toggle("explode", { pieces: 75 }, 1500);
+        document.remove(divDrugi);
 
         return console.log("Omg! The right Player has won!");
       }

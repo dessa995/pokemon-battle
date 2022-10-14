@@ -1,3 +1,5 @@
+@import "./mixins";
+
 * {
   box-sizing: border-box;
 }
@@ -13,6 +15,15 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .fight-dugme {
@@ -51,39 +62,56 @@ div.naslov {
   justify-content: space-between;
 }
 
-.pokretac {
-  max-width: 200px;
-  max-height: 200px;
-  padding: 80px 0px;
-  background-image: url("/assets/images/Poké_Ball_icon.svg-removebg-preview.png");
-  background-size: cover;
-  background-repeat: none;
-  background-color: transparent;
-  border: none;
-  color: rgb(30, 217, 16);
-  font-size: 20px;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
+.pokretac,
 .button-protivnik {
   max-width: 200px;
   max-height: 200px;
-  padding: 80px 10px;
+  padding: 80px 0px;
+  // background-image: url("/assets/images/Poké_Ball_icon.svg-removebg-preview.png");
+  // background-size: cover;
+  // background-repeat: none;
+  background-color: transparent;
+  border: none;
+  position: relative;
+}
+
+.pokretac::before,
+.button-protivnik::before {
+  content: "";
   background-image: url("/assets/images/Poké_Ball_icon.svg-removebg-preview.png");
   background-size: cover;
   background-repeat: none;
-  background-color: transparent;
-  border: none;
-  color: rgb(30, 217, 16);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.pokeball-text {
+  margin-top: 0px;
+  color: rgb(16, 194, 217);
   font-size: 20px;
   font-weight: bold;
   text-transform: uppercase;
+  position: relative;
+  z-index: 9999;
 }
 
-.pokretac:hover,
-.button-protivnik:hover {
-  color: rgb(27, 153, 18);
+.pokeball-text:hover {
+  color: rgb(26, 167, 185);
+  cursor: pointer;
+}
+
+.pokretac:hover::before,
+.button-protivnik:hover::before {
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+  z-index: 1;
   cursor: pointer;
 }
 
@@ -133,6 +161,21 @@ div.naslov {
 .pokemon-img-div {
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
+  animation: fadeIn 1s;
+}
+
+.pokemon-img-div-fadeout {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  animation: fadeOut 1s;
+}
+
+.opponent-img-div {
+  animation: fadeIn 1s;
+}
+
+.opponent-img-div-fadeout {
+  animation: fadeOut 1s;
 }
 
 .pokemon-img {
